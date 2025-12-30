@@ -55,7 +55,9 @@ VALUES
 (2, 103, '2024-09-18', NULL);
 
 UPDATE Borrow SET return_date = '2024-10-01' WHERE reader_id = 1;
+SET SQL_SAFE_UPDATES = 0;
 UPDATE Book SET publish_year = 2023 WHERE publish_year >= 2021;
+SET SQL_SAFE_UPDATES = 1;
 DELETE FROM Borrow WHERE borrow_date < '2024-09-18';
 
 SELECT * FROM Reader;
